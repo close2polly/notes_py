@@ -53,7 +53,6 @@ def delete_note():
         else:
             del notes['notes'][id]
             notes['order'] = list(filter(lambda x: x != id, notes['order']))
-            print(notes)
             with open('notes.json', 'w', encoding='utf-8') as fileW:
                 fileW.writelines(json.dumps(notes, sort_keys=True, indent=4))
             print()
